@@ -1,0 +1,23 @@
+{
+    "0": 
+    {
+        "image": "https://static.chotot.com/storage/chotot-kinhnghiem/c2c/2019/09/cho-mat-xe-31-1024x684.jpg",
+        "name": "Nguyễn Thanh Trọng",
+        "position": "Nhân viên Thiết Kế",
+        "description": "Là một nhân viên ưu tú, có nhiều năm kinh nghiệm trong công việc, được kế thừa tinh hoa từ giống chó nổi bật nhất Việt Nam"
+    },
+    "1": 
+    { 
+        "image": "https://mtg.1cdn.vn/2020/08/03/49/images-motthegioi-vn-8443_oa-.jpg",
+        "name": "Võ Ngọc Hải Đăng",
+        "position": "Game Thủ",
+        "description": "Game thủ chuyên cày game các thể loại, kiếm được tiền và không kiếm được tiền, miễn là game là có thể chơi."
+    },
+    "2": 
+    {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7N0jjfbfwwRR6o8zcH2VyL1YKIq8etQm_TQ&usqp=CAU",
+        "name": "Nguyễn Công Huân",
+        "position": "Nhà Đầu Cơ",
+        "description": "Nhà đầu cơ tiền ảo của năm."
+    }
+} 

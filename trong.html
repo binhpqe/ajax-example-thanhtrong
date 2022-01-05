@@ -7,36 +7,62 @@
 <body>
     <div>
         <h1>Danh sách</h1>
-            <ul>
-                <li><a href="1.txt">Phan Tấn Đạt</a></li>
-                <li><a href="2.txt">Ngô Đức Sơn</a></li>
-                <li><a href="3.txt">Trần Hoàng Anh</a></li>
+            <ul id="danhsach">
+                <li name="0">Mẫu</li>
             </ul>
     </div>
     <div>
-        <h2>Nội dung lấy về</h2>
+        <h2>Nội dung lấy ra từ biến</h2>
         <div id="ketqua">
-            
+            Hình:<img       id="image"  src="" style="max-width:300px"><br>
+            Tên:<h5         id="name"></h5><br>
+            Nghề Nghiệp:<h5 id="pos"></h5><br>
+            Giới thiệu:<h5  id="des"></h5><br>
         </div>
     </div>
 </body>
 </html>
 <script>
-$('a').on('click', function (e) 
+var data = [];
+$(document).ready( function ()
 {
-    e.preventDefault() ;
-    
-    var link = $(this).attr('href');
-    
     $.ajax(
     {
-        url: link, 
+        url: "data.json", 
         success: function(result)
         {
-            console.log(result);
-            $("#ketqua").html(result);
+            /*Lấy dữ liệu từ json về lưu ở biến data*/
+            data = result;
+            console.log(data);
+            /*Show danh sách lên html*/
+            var dataLength = Object.keys(data).length;
+            var danhsach  ="";
+            
+            for (var i = 0; i < dataLength ; i++)
+            {
+                danhsach += "<h3><li name="+i+">"+data[i]['name']+"</li></h3>";
+            }
+            
+            $("#danhsach").html(danhsach);
+            /*Tạo sự kiện cho các tag li vừa render ra html*/
+            $('li').on('click', getData );
         }
     });
     
+    
 });
+
+/*Function lấy data*/
+function getData() 
+{
+    /*Lấy giá trị của dòng li đang click*/
+    var id = $(this).attr("name");
+    /*Lấy dữ liệu từ data gán vào các id html*/
+    //console.log(data[id]["image"]);
+    $('#image').attr("src",   data[id]["image"]   );
+    $('#name').html( data[id]["name"] );
+    $('#pos').html( data[id]["position"] );
+    $('#des').html( data[id]["description"] );
+    
+};
 </script>
